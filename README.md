@@ -1,2 +1,2 @@
 # Chess
-A chess game using object oriented principles
+A chess game using object oriented principles.
