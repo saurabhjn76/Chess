@@ -5,15 +5,15 @@ public class PieceFactory {
 		switch(pType) {
 			case PieceType.PAWN: 	return new Pawn(x,y,colr);
 					   	break;
-			case PieceType.CAMEL: 	return new Bishop(x,y,colr);
+			case PieceType.BISHOP: 	return new Bishop(x,y,colr);
 						break;
 			case PieceType.KING: 	return new King(x,y,colr);
 					   	break;
 			case PieceType.QUEEN: 	return new Queen(x,y,colr);
 						break;
-			case PieceType.HORSE: 	return new Knight(x,y,colr);
+			case PieceType.KNIGHT: 	return new Knight(x,y,colr);
 						break;
-			case PieceType.ELEPHANT:return new Rook(x,y,colr);
+			case PieceType.ROOK:return new Rook(x,y,colr);
 						break;
 			default: return null;
 		}

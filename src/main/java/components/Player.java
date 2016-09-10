@@ -12,10 +12,14 @@ public class Player {
 	public Player(Color color) {
 		this.color = color;
 		pawn = new pawn[8];
-		PieceFactory peiceFactory = new PieceFactory();
 		bishop = new bishop[2];
 		knight = new knight[2];
 		rook = new rook[2];
+		initialize();
+	}
+
+	public void initialize() {
+		PieceFactory pieceFactory = new PieceFactory();
 		int rank1,rank2; // for positioning of pieces
 		switch(color) {
 		case Color.WHITE: rank1=0;
@@ -28,12 +32,12 @@ public class Player {
 		}
 		for(int i=0;i<8;i++) 
 			pawn[i] = new pieceFactory.createPiece(PieceType.PAWN,i,rank2,color);
-		bishop[0] = new pieceFactory.createPiece(PieceType.CAMEL,2,rank1,color);
-		bishop[1] = new pieceFactory.createPiece(PieceType.CAMEL,5,rank1,color);
-		knight[0] = new pieceFactory.createPiece(PieceType.HORSE,1,rank1,color);
-		knight[1] = new pieceFactory.createPiece(PieceType.HORSE,6,rank1,color);
-		rook[0] = new pieceFactory.createPiece(PieceType.ELEPHANT,0,rank1,color);
-		rook[1] = new pieceFactory.createPiece(PieceType.ELEPHANT,7,rank1,color);
+		bishop[0] = new pieceFactory.createPiece(PieceType.BISHOP,2,rank1,color);
+		bishop[1] = new pieceFactory.createPiece(PieceType.BISHOP,5,rank1,color);
+		knight[0] = new pieceFactory.createPiece(PieceType.KNIGHT,1,rank1,color);
+		knight[1] = new pieceFactory.createPiece(PieceType.KNIGHT,6,rank1,color);
+		rook[0] = new pieceFactory.createPiece(PieceType.ROOK,0,rank1,color);
+		rook[1] = new pieceFactory.createPiece(PieceType.ROOK,7,rank1,color);
 		king = new pieceFactory.createPiece(PieceType.KING,4,rank1,color);
 		queen = new pieceFactory.createPiece(PieceType.QUEEN,3,rank1,color);
 	}
