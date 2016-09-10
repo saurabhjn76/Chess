@@ -5,5 +5,5 @@ public abstract class Piece {
 	protected Location curLoc;
 	public abstract boolean validMove();
 	boolean status; // 1 is alive, 0 is dead.
-	int color;// 0 for white, 1 for black.
+	boolean color;// 0 for white, 1 for black.
 }
