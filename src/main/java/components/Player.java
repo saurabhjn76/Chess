@@ -9,7 +9,6 @@ public class Player {
 	public Knight knight[];
 	public Rook rook[];
 
-
 	public Player(Color color) {
 		this.color = color;
 		pawn = new pawn[8];
@@ -19,14 +18,13 @@ public class Player {
 		rook = new rook[2];
 		int rank1,rank2; // for positioning of pieces
 		switch(color) {
-			case Color.WHITE: rank1=0;
-							  rank2=1;
-							  break;
+		case Color.WHITE: rank1=0;
+				  rank2=1;
+				 break;
 
-			case Color.BLACK: rank1=7;
-							  rank2=6;
-							  break;
-
+		case Color.BLACK: rank1=7;
+				  rank2=6;
+				  break;
 		}
 		for(int i=0;i<8;i++) 
 			pawn[i] = new pieceFactory.createPiece(PieceType.PAWN,i,rank2,color);
@@ -38,8 +36,5 @@ public class Player {
 		rook[1] = new pieceFactory.createPiece(PieceType.ELEPHANT,7,rank1,color);
 		king = new pieceFactory.createPiece(PieceType.KING,4,rank1,color);
 		queen = new pieceFactory.createPiece(PieceType.QUEEN,3,rank1,color);
-		
 	}
-
-
 }
