@@ -17,10 +17,77 @@ public class Rook extends Piece{
 		}
 
 		//detecting if there is any obstacle in movement path
-		if ( x == destination.getX() ){
-			//move in horizontal direction
-			if ( y < destination.getY() ){
-				//go right
-				for (i = x+1 ; i <= destination.getY() ; i++){
+		if ( x == destination.getX()){
+			// move horizontally
+
+			if ( y < destination.getY()){
+				//moving right
+				for(i = y+1 ; i < destination.getY(); i++){
 					Location tmpDest = new Location(x,i);
-					if(Board.g
+					if(Board.getLocPiece(tmpDest) != null)
+						return false;
+				}
+				if(color == Board.getLocPiece(destination))
+					return false;
+				move(destination);
+				return true;
+			}
+
+			else{
+				//moving left
+				for(i = y-1 ; i> destination.getY(); --i){
+					Location tmpDest = new Location(x,i);
+					if( Board.getLocPiece(tmpDest) != null)
+						return false;
+				}
+				if(color == Board.getLocPiece(destination))
+					return false;
+				move(destination);
+				return true;
+			}
+		}
+
+		else if ( y == destination.getY()){
+
+			//move vertically
+
+			if ( x < destination.getX()){
+				//moving up
+				for(i = x+1 ; i < destination.getX(); i++){
+					Location tmpDest = new Location(i,y);
+					if(Board.getLocPiece(tmpDest) != null)
+						return false;
+				}
+				if(color == Board.getLocPiece(destination))
+					return false;
+				move(destination);
+				return true;
+			}
+
+			else{
+				//moving down
+				for(i = x-1 ; i> destination.getX(); --i){
+					Location tmpDest = new Location(i,y);
+					if( Board.getLocPiece(tmpDest) != null)
+						return false;
+				}
+				if(color == Board.getLocPiece(destination))
+					return false;
+				move(destination);
+				return true;
+			}
+		}
+
+		else
+			return false;
+
+	}
+
+
+	public void move(Location validDest){
+		Board.setLocPiece(validDest,color);
+		
+	}
+
+}
+
