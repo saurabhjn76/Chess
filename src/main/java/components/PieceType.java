@@ -2,9 +2,9 @@ package components;
 
 public enum PieceType {
 	PAWN,
-	CAMEL,
+	BISHOP,
 	KING,
 	QUEEN,
-	HORSE,
-	ELEPHANT
+	KNIGHT,
+	ROOK
 };
