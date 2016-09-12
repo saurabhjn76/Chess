@@ -41,6 +41,7 @@ public class Knight extends Piece{
 			return false;
 	}
 
+
 	@Override
 	public void move(Location validDest){
 		Board.setLocPiece(validDest,color);
