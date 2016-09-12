@@ -9,7 +9,11 @@ public class Knight extends Piece{
 	public boolean validMove(Location destination){
 		int x = curLoc.getX();
 		int y = curLoc.getY();
-		assert (x != destination.getX() && y != destination.getY()) : "Invalid Move";
+		if( x == destination.getX() && y == destination.getY() ){
+			System.out.println("Cannot move from Current Location to Current Location.");
+			return false;
+		}
+
 		//Considering upper right corner of the Matrix as [0[0]
 		if( x+2 == destination.getX() || x-2 == destination.getX() ){
 			if( y-1 == destination.getY() || y+1 == destination.getY() ){

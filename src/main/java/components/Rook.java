@@ -10,20 +10,17 @@ public class Rook extends Piece{
 	public boolean validMove(Location destination){
 		int x = curLoc.getX();
 		int y = curLoc.getY();
-		assert (x != destination.getX() && y != destination.getY()) : "Invalid Move";
-
-		
-		if(Math.abs(x - destination.getX()) > 0 && Math.abs(y - destination.getY()) > 0)
+		int i;
+		if(x == destination.getX() && y == destination.getY()){
+			System.out.println("Cannot move from Current Location to Current Location.");
 			return false;
-		if(color == Board.getLocPiece(destination))
-			return false;
-		
-		return true;
-		//Doing nothing
-	}
+		}
 
-	public void move(Location validDest){
-		Board.setLocPiece(validDest,color);
-		
-	}
-}
+		//detecting if there is any obstacle in movement path
+		if ( x == destination.getX() ){
+			//move in horizontal direction
+			if ( y < destination.getY() ){
+				//go right
+				for (i = x+1 ; i <= destination.getY() ; i++){
+					Location tmpDest = new Location(x,i);
+					if(Board.g
