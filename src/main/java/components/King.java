@@ -1,6 +1,7 @@
 package components;
 import java.lang.*;
 
+<<<<<<< HEAD
 public class King extends Piece {
 	public King(int x, int y, Color colr){
 		super(x, y, colr);
@@ -32,3 +33,23 @@ public class King extends Piece {
 	}
 }
 	
+=======
+public class King extends Piece{
+
+	public King(int x, int y, Color colr){
+		super(x, y, colr);
+	}
+	
+	@Override
+	public boolean validMove(Location destination){
+		//TODO:
+		return true;
+	}
+
+	@Override
+	public void move(Location validDest){
+		//TODO:
+		return ;
+	}
+}
+>>>>>>> 4f2dd3553689656056891732e75baa6438662c77
