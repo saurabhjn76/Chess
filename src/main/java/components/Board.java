@@ -11,4 +11,5 @@ public class Board {
 	public static Color getLocPiece(Location loc){
 		return boardStatus[loc.getX()][loc.getY()];
 	}
+	
 }
