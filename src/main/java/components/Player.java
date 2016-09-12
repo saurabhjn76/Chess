@@ -20,7 +20,7 @@ public class Player {
 
 	public void initialize() {
 		//PieceFactory pieceFactory = new PieceFactory();
-		int rank1,rank2; // for positioning of pieces
+		int rank1=0,rank2=0; // for positioning of pieces
 		switch(color) {
 		case WHITE: rank1=0;
 				  rank2=1;
@@ -31,14 +31,14 @@ public class Player {
 				  break;
 		}
 		for(int i=0;i<8;i++) 
-			pawn[i] = new PieceFactory.createPiece(PieceType.PAWN,i,rank2,color);
-		bishop[0] = new PieceFactory.createPiece(PieceType.BISHOP,2,rank1,color);
-		bishop[1] = new PieceFactory.createPiece(PieceType.BISHOP,5,rank1,color);
-		knight[0] = new PieceFactory.createPiece(PieceType.KNIGHT,1,rank1,color);
-		knight[1] = new PieceFactory.createPiece(PieceType.KNIGHT,6,rank1,color);
-		rook[0] = new PieceFactory.createPiece(PieceType.ROOK,0,rank1,color);
-		rook[1] = new PieceFactory.createPiece(PieceType.ROOK,7,rank1,color);
-		king = new PieceFactory.createPiece(PieceType.KING,4,rank1,color);
-		queen = new PieceFactory.createPiece(PieceType.QUEEN,3,rank1,color);
+			pawn[i] = (Pawn) new PieceFactory().createPiece(PieceType.PAWN,i,rank2,color);
+		bishop[0] = (Bishop) new PieceFactory().createPiece(PieceType.BISHOP,2,rank1,color);
+		bishop[1] = (Bishop) new PieceFactory().createPiece(PieceType.BISHOP,5,rank1,color);
+		knight[0] = (Knight) new PieceFactory().createPiece(PieceType.KNIGHT,1,rank1,color);
+		knight[1] = (Knight) new PieceFactory().createPiece(PieceType.KNIGHT,6,rank1,color);
+		rook[0] = (Rook) new PieceFactory().createPiece(PieceType.ROOK,0,rank1,color);
+		rook[1] = (Rook)  new PieceFactory().createPiece(PieceType.ROOK,7,rank1,color);
+		king = (King) new PieceFactory().createPiece(PieceType.KING,4,rank1,color);
+		queen = (Queen) new PieceFactory().createPiece(PieceType.QUEEN,3,rank1,color);
 	}
 }

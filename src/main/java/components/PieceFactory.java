@@ -1,6 +1,7 @@
 package components;
 
 public class PieceFactory {
+
 	public Piece createPiece(PieceType pType,int x,int y,Color colr) {
 		switch(pType) {
 			case PAWN: 	return new Pawn(x,y,colr);
@@ -17,6 +18,5 @@ public class PieceFactory {
 						
 			default: return null;
 		}
-		return null;
 	}
 }

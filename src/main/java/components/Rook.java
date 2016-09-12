@@ -7,11 +7,13 @@ public class Rook extends Piece{
 		super(x, y, colr);
 	}
 	
+	@Override
 	public boolean validMove(Location destination){
 		//TODO:
 		return true;
 	}
 
+	@Override
 	public void move(Location validDest){
 		//TODO:
 		return ;
