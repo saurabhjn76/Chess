@@ -8,6 +8,7 @@ public class Rook extends Piece{
 		Board.setLocPiece(initLoc,colr);
 	}
 	
+	
 	@Override
 	public boolean validMove(Location destination){
 		int x = curLoc.getX();
