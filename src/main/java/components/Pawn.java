@@ -55,7 +55,7 @@ public class Pawn extends Piece{
 
 		else if( destination.getX() == x+1 || destination.getX() == x-1){
 			if( destination.getY() == y+1 ){
-				if( Board.getLocPiece(tmpDest) != null && color != Board.getLocPiece(destination) ){
+				if( Board.getLocPiece(destination) != null && color != Board.getLocPiece(destination) ){
 
 					move(destination);
 					return true;
