@@ -5,7 +5,7 @@ public class Rook extends Piece{
 
 	public Rook(int x, int y, Color colr){
 		super(x, y, colr);
-		Board.setLocPiece(initLoc,colr);
+		//Board.setLocPiece(initLoc,colr);
 	}
 	
 	
@@ -30,7 +30,7 @@ public class Rook extends Piece{
 					if(Board.getLocPiece(tmpDest) != null)
 						return false;
 				}
-				if(color == Board.getLocPiece(destination))
+				if(color == Board.getLocPiece(destination).color)
 					return false;
 				move(destination);
 				return true;
@@ -43,7 +43,7 @@ public class Rook extends Piece{
 					if( Board.getLocPiece(tmpDest) != null)
 						return false;
 				}
-				if(color == Board.getLocPiece(destination))
+				if(color == Board.getLocPiece(destination).color)
 					return false;
 				move(destination);
 				return true;
@@ -61,7 +61,7 @@ public class Rook extends Piece{
 					if(Board.getLocPiece(tmpDest) != null)
 						return false;
 				}
-				if(color == Board.getLocPiece(destination))
+				if(color == Board.getLocPiece(destination).color)
 					return false;
 				move(destination);
 				return true;
@@ -74,7 +74,7 @@ public class Rook extends Piece{
 					if( Board.getLocPiece(tmpDest) != null)
 						return false;
 				}
-				if(color == Board.getLocPiece(destination))
+				if(color == Board.getLocPiece(destination).color)
 					return false;
 				move(destination);
 				return true;
@@ -88,6 +88,6 @@ public class Rook extends Piece{
 
 	@Override
 	public void move(Location validDest){
-		Board.setLocPiece(validDest,color);
+		//Board.setLocPiece(validDest,color);
 	}
 }

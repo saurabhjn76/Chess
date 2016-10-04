@@ -33,6 +33,7 @@ public class Player {
 		for(int i=0;i<8;i++) 
 			pawn[i] = (Pawn) new PieceFactory().createPiece(PieceType.PAWN,i,rank2,color);
 		bishop[0] = (Bishop) new PieceFactory().createPiece(PieceType.BISHOP,2,rank1,color);
+		Board.setLocPiece(bishop[0],bishop[0].curLoc);
 		bishop[1] = (Bishop) new PieceFactory().createPiece(PieceType.BISHOP,5,rank1,color);
 		knight[0] = (Knight) new PieceFactory().createPiece(PieceType.KNIGHT,1,rank1,color);
 		knight[1] = (Knight) new PieceFactory().createPiece(PieceType.KNIGHT,6,rank1,color);
