@@ -4,7 +4,7 @@ import java.lang.*;
 public class King extends Piece {
 	public King(int x, int y, Color colr){
 		super(x, y, colr);
-		Board.setLocPiece(initLoc,colr);
+		//Board.setLocPiece(initLoc,colr);
 	}
 	@Override
 	public boolean validMove(Location destination){
@@ -16,7 +16,7 @@ public class King extends Piece {
 			return false;
 		}
 		if( Math.abs(x -destination.getX())<=1 && Math.abs(y -destination.getY())<=1 ){
-			if(color == Board.getLocPiece(destination))
+			if(color == Board.getLocPieceColor(destination))
 					return false;
 			move(destination);
 			return true;
@@ -28,7 +28,7 @@ public class King extends Piece {
 
 	@Override
 	public void move(Location validDest){
-		Board.setLocPiece(validDest,color);
+		//Board.setLocPiece(validDest,color);
 		
 	}
 }

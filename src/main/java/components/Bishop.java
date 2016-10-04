@@ -5,7 +5,7 @@ public class Bishop extends Piece{
 
 	public Bishop(int x, int y, Color colr){
 		super(x, y, colr);
-		Board.setLocPiece(initLoc,colr);
+		//Board.setLocPiece(initLoc,colr);
 	}
 	
 	
@@ -23,7 +23,7 @@ public class Bishop extends Piece{
 		if(Math.abs(x - destination.getX()) == Math.abs(y - destination.getY())){
 
 			//yet to check if there's a piece on the way.
-			if(color == Board.getLocPiece(destination))
+			if(color == Board.getLocPieceColor(destination))
 					return false;
 			else
 				return true;
@@ -37,6 +37,6 @@ public class Bishop extends Piece{
 
 	@Override
 	public void move(Location validDest){
-		Board.setLocPiece(validDest,color);	
+		//Board.setLocPiece(validDest,color);	
 	}
 }

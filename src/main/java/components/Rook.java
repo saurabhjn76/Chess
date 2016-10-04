@@ -5,7 +5,7 @@ public class Rook extends Piece{
 
 	public Rook(int x, int y, Color colr){
 		super(x, y, colr);
-		Board.setLocPiece(initLoc,colr);
+		//Board.setLocPiece(initLoc,colr);
 	}
 	
 	
@@ -27,10 +27,10 @@ public class Rook extends Piece{
 				//moving right
 				for(i = y+1 ; i < destination.getY(); i++){
 					Location tmpDest = new Location(x,i);
-					if(Board.getLocPiece(tmpDest) != null)
+					if(Board.getLocPieceColor(tmpDest) != null)
 						return false;
 				}
-				if(color == Board.getLocPiece(destination))
+				if(color == Board.getLocPieceColor(destination))
 					return false;
 				move(destination);
 				return true;
@@ -40,10 +40,10 @@ public class Rook extends Piece{
 				//moving left
 				for(i = y-1 ; i> destination.getY(); --i){
 					Location tmpDest = new Location(x,i);
-					if( Board.getLocPiece(tmpDest) != null)
+					if( Board.getLocPieceColor(tmpDest) != null)
 						return false;
 				}
-				if(color == Board.getLocPiece(destination))
+				if(color == Board.getLocPieceColor(destination))
 					return false;
 				move(destination);
 				return true;
@@ -58,10 +58,10 @@ public class Rook extends Piece{
 				//moving up
 				for(i = x+1 ; i < destination.getX(); i++){
 					Location tmpDest = new Location(i,y);
-					if(Board.getLocPiece(tmpDest) != null)
+					if(Board.getLocPieceColor(tmpDest) != null)
 						return false;
 				}
-				if(color == Board.getLocPiece(destination))
+				if(color == Board.getLocPieceColor(destination))
 					return false;
 				move(destination);
 				return true;
@@ -71,10 +71,10 @@ public class Rook extends Piece{
 				//moving down
 				for(i = x-1 ; i> destination.getX(); --i){
 					Location tmpDest = new Location(i,y);
-					if( Board.getLocPiece(tmpDest) != null)
+					if( Board.getLocPieceColor(tmpDest) != null)
 						return false;
 				}
-				if(color == Board.getLocPiece(destination))
+				if(color == Board.getLocPieceColor(destination))
 					return false;
 				move(destination);
 				return true;
@@ -88,6 +88,6 @@ public class Rook extends Piece{
 
 	@Override
 	public void move(Location validDest){
-		Board.setLocPiece(validDest,color);
+		//Board.setLocPiece(validDest,color);
 	}
 }

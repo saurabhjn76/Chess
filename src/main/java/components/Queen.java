@@ -4,7 +4,7 @@ public class Queen extends Piece {
 	
 	public Queen(int x, int y, Color colr){
 		super(x, y, colr);
-		Board.setLocPiece(initLoc,colr);
+		//Board.setLocPiece(initLoc,colr);
 	}
 	public boolean validMove(Location destination){
 		int x = curLoc.getX();
@@ -15,13 +15,13 @@ public class Queen extends Piece {
 		}
 		
 		if (x==destination.getX() || y == destination.getY()){
-			if(color == Board.getLocPiece(destination))
+			if(color == Board.getLocPieceColor(destination))
 					return false;
 			else
 				return true;
 		}
 		else if(Math.abs(x - destination.getX()) == Math.abs(y - destination.getY()))
-			if(color == Board.getLocPiece(destination))
+			if(color == Board.getLocPieceColor(destination))
 					return false;
 			else
 				return true;
@@ -30,7 +30,7 @@ public class Queen extends Piece {
 	}
 
 	public void move(Location validDest){
-		Board.setLocPiece(validDest,color);
+		//Board.setLocPiece(validDest,color);
 		
 	}
 }

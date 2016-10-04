@@ -5,7 +5,7 @@ public class Pawn extends Piece{
 
 	public Pawn(int x, int y, Color colr){
 		super(x, y, colr);
-		Board.setLocPiece(initLoc,colr);
+		//Board.setLocPiece(initLoc,colr);
 	}
 	
 	@Override
@@ -29,7 +29,7 @@ public class Pawn extends Piece{
 					//provided there is no obstacle on its path
 					for(int i = y+1 ; i <= y+2; i++){
 					Location tmpDest = new Location(x,i);
-					if(Board.getLocPiece(tmpDest) != null)
+					if(Board.getLocPieceColor(tmpDest) != null)
 						return false;
 					}
 
@@ -42,7 +42,7 @@ public class Pawn extends Piece{
 
 			}
 			// If pawn is not at init position, it can move only 1 position
-			else if ( Board.getLocPiece(destination) == null && destination.getY() == y+1 ){
+			else if ( Board.getLocPieceColor(destination) == null && destination.getY() == y+1 ){
 				move(destination);
 				return true;
 			}
@@ -55,7 +55,7 @@ public class Pawn extends Piece{
 
 		else if( destination.getX() == x+1 || destination.getX() == x-1){
 			if( destination.getY() == y+1 ){
-				if( Board.getLocPiece(destination) != null && color != Board.getLocPiece(destination) ){
+				if( Board.getLocPieceColor(destination) != null && color != Board.getLocPieceColor(destination) ){
 
 					move(destination);
 					return true;
@@ -75,7 +75,7 @@ public class Pawn extends Piece{
 
 	@Override
 	public void move(Location validDest){
-		Board.setLocPiece(validDest,color);
+		//Board.setLocPiece(validDest,color);
 		return ;
 		
 	}
